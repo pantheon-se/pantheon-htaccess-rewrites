@@ -12,13 +12,21 @@
  *
  *    Place this pantheon_rewrites.php file in sites/default
  *    Add the following to line 2 of settings.php
- *           include 'pantheon_rewrites.php';
+ *          // Include line for settings.php or wp-config.php
+            $pantheon_rewrite_file = __DIR__ .  '/pantheon_rewrites.php';
+            if(file_exists($pantheon_rewrite_file)) {
+              include 'pantheon_rewrites.php';
+            }
  *
  * Wordpress:
  *
  *    Place this pantheon_rewrites.php file in the same directory as wp-config.php, typically your docroot
  *    Add the following to line 2 of wp-config.php
- *           include 'pantheon_rewrites.php';
+ *          // Include line for settings.php or wp-config.php
+            $pantheon_rewrite_file = __DIR__ .  '/pantheon_rewrites.php';
+            if(file_exists($pantheon_rewrite_file)) {
+              include 'pantheon_rewrites.php';
+            }
  *
  *
  * DISCLAIMER: Use this file at your own risk. Pantheon makes no warranties against this file
@@ -38,8 +46,8 @@
  *  To use page redirects, edit the $redirects array as follows, one redirect per line:
  *
  *    $redirects = [
- *        '/OLD_URL_PATH' => '/NEW_URL_PATH',
- *       '/SECOND_OLD_URL_PATH' => '/SECOND_NEW_URL_PATH',
+ *        '/OLD_PATH' => '/NEW_PATH',
+ *       '/SECOND_OLD_PATH' => '/SECOND_NEW_PATH',
  *    ]
  *
  *
@@ -51,7 +59,7 @@
  * Array of page redirects. This is what you edit.
  */
 $redirects = [
-  '/OLD_URL' => '/NEW_URL',  // You can copy/paste and duplicate this line for more redirects
+  '/OLD_PATH' => '/NEW_PATH',  // You can copy/paste and duplicate this line for more redirects
 ];
 
 /**
@@ -80,8 +88,8 @@ foreach ($redirects as $source => $target) {
  *  To use page rewrites, edit the mod_rewrites array as follows, one rewrite per line:
  *
  *    $mod_rewrites = [
- *        '/OLD_URL_PATH' => '/NEW_URL_PATH',
- *       '/SECOND_OLD_URL_PATH' => '/SECOND_NEW_URL_PATH',
+ *        '/OLD_PATH' => '/NEW_PATH',
+ *       '/SECOND_OLD_PATH' => '/SECOND_NEW_PATH',
  *    ]
  *
  *
@@ -92,7 +100,7 @@ foreach ($redirects as $source => $target) {
  * Array of URL rewrites. This is what you edit.
  */
 $mod_rewrites = [
-  '/OLD_URL' => '/NEW_URL',  // You can copy/paste and duplicate this line for more rewrites
+  '/OLD_PATH' => '/NEW_PATH',  // You can copy/paste and duplicate this line for more rewrites
 ];
 
 /**

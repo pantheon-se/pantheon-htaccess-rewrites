@@ -14,12 +14,12 @@ Open up *pantheon_rewrites.php* in your preferred editor. Find the *$redirects* 
 
 ```
 $redirects = [
-  '/OLD_URL' => '/NEW_URL',  // You can copy/paste and duplicate this line for more redirects
+  '/OLD_PATH' => '/NEW_PATH',  // You can copy/paste and duplicate this line for more redirects
 ];
 ```
-Replace *OLD_URL* with the path you wish to redirect. Replace *NEW_URL* with the new path. If you need to add additional redirects, simply copy the line:
+Replace *OLD_PATH* with the path you wish to redirect. Replace *NEW_PATH* with the new path. If you need to add additional redirects, simply copy the line:
 ```
-'/OLD_URL' => '/NEW_URL',
+'/OLD_PATH' => '/NEW_PATH',
 ```
 And paste it under the first redirect array object. Repeat the process for each new redirect.
 
@@ -29,12 +29,12 @@ Open up *pantheon_rewrites.php* in your preferred editor. Find the *$mod_rewrite
 
 ```
 $mod_rewrites = [
-  '/OLD_URL' => '/NEW_URL',  // You can copy/paste and duplicate this line for more rewrites
+  '/OLD_PATH' => '/NEW_PATH',  // You can copy/paste and duplicate this line for more rewrites
 ];
 ```
-Replace *OLD_URL* with the request path. Replace *NEW_URL* with the rewrite proxy path. If you need to add additional rewrites, simply copy the line:
+Replace *OLD_PATH* with the request path. Replace *NEW_PATH* with the rewrite proxy path. If you need to add additional rewrites, simply copy the line:
 ```
-'/OLD_URL' => '/NEW_URL',
+'/OLD_PATH' => '/NEW_PATH',
 ```
 And paste it under the first rewrite array object. Repeat the process for each new rewrite.
 
