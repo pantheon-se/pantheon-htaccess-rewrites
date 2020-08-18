@@ -70,8 +70,10 @@ foreach ($redirects as $source => $target) {
   if (strpos($_SERVER['REQUEST_URI'], $source) !== false) {
     // Check for static requests
     $prefix = (strpos($target, 'http') == 0) ? '' : "https://" . $_SERVER['HTTP_HOST'];
+    // Grab any args from the URL so we can append them to the redirect
+    $url_args = "?" . $_SERVER['QUERY_STRING'];
     // Redirect
-    header("Location: " . $prefix . $target);
+    header("Location: " . $prefix . $target . $url_args, TRUE,301);
     exit();
   }
 }
@@ -108,12 +110,12 @@ $mod_rewrites = [
  */
 foreach ($mod_rewrites as $source => $target) {
   if (strpos($_SERVER['REQUEST_URI'], $source) !== false) {
-
     // Build URL
     $url = "http://" . $_SERVER['HTTP_HOST'] . $target;
-
+    // Grab any args from the URL so we can append them to the rewrite
+    $url_args = "?" . $_SERVER['QUERY_STRING'];
     // Fetch the proxy page markup and output as response.
-    $page = get_proxy_site_page($url);
+    $page = get_proxy_site_page($url . $url_args);
     echo $page['content'];
     exit();
   }
