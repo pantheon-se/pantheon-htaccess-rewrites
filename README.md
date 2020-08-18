@@ -60,7 +60,7 @@ After you have completed entering your redirect and/or rewrite paths, it's time 
 
 Add/upload the *pantheon_rewrites.php* script to the Wordpress directory that contains the file *wp-config.php*.
 
-Open up *settings.php* and insert the following code at the top, on or around lines 2 or 3 of the file.  
+Open up *wp-config.php* and insert the following code at the top, on or around lines 2 or 3 of the file.  
 ```
 // Include line for settings.php or wp-config.php
    $pantheon_rewrite_file = __DIR__ .  '/pantheon_rewrites.php';
