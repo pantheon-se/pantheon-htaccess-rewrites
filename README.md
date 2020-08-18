@@ -68,3 +68,12 @@ Open up *wp-config.php* and insert the following code at the top, on or around l
       include 'pantheon_rewrites.php';
    }
 ```
+## Frequently Asked Questions
+
+*Will this capture and pass query string variables for rewrites?*
+
+Yes. Any query string parameters are passed to the rewrite proxy request and the redirects.
+
+*Will this increase the load on my site?*
+
+The redirects will not effect load on your site. The rewrites will add 1 additional request since this code will leverage a CURL call to retrieve the proxied page.
