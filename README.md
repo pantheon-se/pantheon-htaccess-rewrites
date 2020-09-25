@@ -47,7 +47,7 @@ Add/upload the *pantheon_rewrites.php* script to *sites/default* directory.
 
 Open up *settings.php* and insert the following code at the top, on or around lines 2 or 3 of the file.  
 ```
-// Include line for settings.php or wp-config.php
+// Include line for settings.php
    $pantheon_rewrite_file = __DIR__ .  '/pantheon_rewrites.php';
    if(file_exists($pantheon_rewrite_file)) {
       include 'pantheon_rewrites.php';
@@ -62,7 +62,7 @@ Add/upload the *pantheon_rewrites.php* script to the Wordpress directory that co
 
 Open up *wp-config.php* and insert the following code at the top, on or around lines 2 or 3 of the file.  
 ```
-// Include line for settings.php or wp-config.php
+// Include line for wp-config.php
    $pantheon_rewrite_file = __DIR__ .  '/pantheon_rewrites.php';
    if(file_exists($pantheon_rewrite_file)) {
       include 'pantheon_rewrites.php';
