@@ -2,7 +2,7 @@
 
 Since Pantheon leverages Nginx for HTTP/HTTPS, we often find ourselves wondering how we can recreate our Apache mod_redirects and mod_rewrites on Pantheon. One way to do this, is to replicate those features in PHP.
 
-In this repository, you will find *pantheon_rewrites.php*, a file which contains code to mimic Apache's mod_redirect and mod_rewrite capabilities on Pantheon. This file gets included at the very beginning of your Drupal *settings.php* or Wordpress *wp-config.php* files, and will perform rewrites and redirects, prior to Wordpress or Drupal bootstrap.
+In this repository, you will find *pantheon_rewrites.php*, a file which contains code to mimic Apache's mod_redirect and mod_rewrite capabilities on Pantheon. This file gets included at the very beginning of your Drupal *settings.php* or Wordpress *wp-config.php* files, and will perform rewrites and redirects, prior to full Wordpress or Drupal bootstrap.
 
 ## Configuring Your Redirects and Rewrites
 
